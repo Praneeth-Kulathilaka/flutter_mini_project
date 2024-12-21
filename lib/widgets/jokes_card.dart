@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/joke.dart';
+import '../models/joke_model.dart';
 
 class JokesList extends StatelessWidget {
   final List<Joke> jokes;
@@ -9,14 +9,18 @@ class JokesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.brown[50],
+      color: Colors.green[50],
       child: ListView.builder(
         itemCount: jokes.length,
         itemBuilder: (context, index) {
           final joke = jokes[index];
           return Card(
-            color: Colors.brown[200],
-            margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            color: Colors.green[200],
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25.0),
+            ),
+            elevation: 5,
+            margin: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
             child: Padding(
               padding: EdgeInsets.all(16.0),
               child: Column(

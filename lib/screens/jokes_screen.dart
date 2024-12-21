@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
-import '../models/joke.dart';
-import '../widgets/jokes_list.dart';
+import '../models/joke_model.dart';
+import '../widgets/jokes_card.dart';
 
 class JokesPage extends StatefulWidget {
   @override
@@ -59,7 +59,7 @@ class _JokesPageState extends State<JokesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor : Colors.brown[600],
+        backgroundColor : Colors.green[600],
         title: Text('Jokes App',
           style: TextStyle(
               color: Colors.white,
@@ -70,7 +70,7 @@ class _JokesPageState extends State<JokesPage> {
           : JokesList(jokes: jokes),
       floatingActionButton: FloatingActionButton(
         onPressed: fetchJokes,
-        backgroundColor: Colors.brown[300],
+        backgroundColor: Colors.green[300],
         child: Icon(Icons.refresh,
         color: Colors.white,),
       ),
